@@ -10,6 +10,7 @@ export interface Todo {
 
 interface TodoStore {
   todos: Todo[];
+  myvalues: string[];
   filter: 'all' | 'active' | 'completed';
   addTodo: (text: string) => void;
   toggleTodo: (id: string) => void;
@@ -22,9 +23,11 @@ export const useTodoStore = create<TodoStore>()(
   persist(
     (set) => ({
       todos: [],
+      myvalues:["aaa","bbb"],
       filter: 'all',
       addTodo: (text) =>
         set((state) => ({
+          myvalues:[...state.myvalues,text],
           todos: [
             ...state.todos,
             {

@@ -14,6 +14,7 @@ export default function Home2() {
   const {
     todos,
     filter,
+    myvalues,
     addTodo,
     toggleTodo,
     deleteTodo,
@@ -79,6 +80,8 @@ export default function Home2() {
             />
           )}
         </Card>
+        {myvalues
+        }
       </div>
     </main>
   );
